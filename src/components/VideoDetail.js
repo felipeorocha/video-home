@@ -9,9 +9,9 @@ const VideoDetail = ({ video }) => { // const { video } = props;
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <div>
-      <div>
-        <iframe src={url}></iframe>
+    <div style={{ maxWidth: '60%' }}>
+      <div style={{ height: '70%', padding: '20px 0' }}>
+        <iframe style={{ width: '100%', height: '100%' }} src={url}></iframe>
       </div>
       <div>
         <div>{video.snippet.title}</div>
