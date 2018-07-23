@@ -18,7 +18,7 @@ class App extends Component {
     };
     YTSearch({ key: API_KEY, term: this.state.term }, (videos) => { // videos = data
       this.setState({
-        videos: videos, // ES6: can be just videos
+        videos: videos, // ES6: could be just 'videos'
         selectedVideo: videos[0]
       })
     });
@@ -28,7 +28,7 @@ class App extends Component {
     event.preventDefault();
     YTSearch({ key: API_KEY, term: this.state.term }, (videos) => { // videos = data
       this.setState({
-        videos: videos, // ES6: can be just videos
+        videos: videos, // ES6: could be just 'videos'
         selectedVideo: videos[0]
       })
     });

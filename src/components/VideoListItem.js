@@ -7,7 +7,7 @@ const VideoListItem = ({ video, onVideoSelected }) => { // ES6: { video, onVideo
     <li onClick={() => onVideoSelected(video)} style={{ cursor: 'pointer', margin: '15px 0' }}>
       <div style={{ display: 'flex' }}>
         <div>
-          <img src={imageUrl} />
+          <img alt={video.snippet.title} src={imageUrl} />
         </div>
         <div>
           <div style={{ marginLeft: '15px' }}>{video.snippet.title}</div>
