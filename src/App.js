@@ -8,14 +8,13 @@ import SearchBar from './components/SearchBar';
 const API_KEY = 'AIzaSyAYlkHKoUwEybCYKK_bhrbXWnulOzw4cNY';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      videos: [],
-      selectedVideo: null
-    };
-    
+  
+  state = {
+    videos: [],
+    selectedVideo: null
+  };
+  
+  componentDidMount(){
     this.videoSearch('');
   }
 
