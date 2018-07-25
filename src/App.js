@@ -18,12 +18,12 @@ class App extends Component {
     this.videoSearch('');
   }
 
-  onVideoSelect = selectedVideo => {
-    this.setState({ selectedVideo: selectedVideo })
+  onVideoSelect = chosenVideo => {
+    this.setState({ selectedVideo: chosenVideo })
   }
 
-  videoSearch = term => {
-    YTSearch({ key: API_KEY, term: term }, (videos) => { // videos = data
+  videoSearch = searchWord => {
+    YTSearch({ key: API_KEY, term: searchWord }, (videos) => { // videos = data
       this.setState({
         videos: videos, // ES6: could be just 'videos'
         selectedVideo: videos[0]
