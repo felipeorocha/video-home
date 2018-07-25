@@ -18,6 +18,8 @@ class SearchBar extends Component {
     this.onInputChange(event.target.value)
   }
 
+  // To avoid handleInputSearch, could be used the sintax: onChange={event => this.onInputChange(event.target.value)}
+
   render(){
     return(
       <div>

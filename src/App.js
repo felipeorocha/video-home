@@ -16,14 +16,14 @@ class App extends Component {
       selectedVideo: null
     };
     
-    this.videosSearch('');
+    this.videoSearch('');
   }
 
   onVideoSelect = selectedVideo => {
     this.setState({ selectedVideo: selectedVideo })
   }
 
-  videosSearch = term => {
+  videoSearch = term => {
     YTSearch({ key: API_KEY, term: term }, (videos) => { // videos = data
       this.setState({
         videos: videos, // ES6: could be just 'videos'
@@ -33,8 +33,10 @@ class App extends Component {
   }
 
   handleSearch = term => {
-    this.videosSearch(term)
+    this.videoSearch(term)
   }
+
+  // To avoid handleSearch video, could be used the sintax: onSearch={term => this.videoSearch(term)}
 
   render() {
     return (
