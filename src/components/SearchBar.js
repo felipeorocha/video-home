@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const SearchBar = (props) =>  {
-  return(
-    <form onSubmit={props.onClick}>
-      <input value={props.value} onChange={props.onInputChange} />
-      <button onClick={props.onClick}>Search</button>
-    </form>
-  );
+class SearchBar extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      term: ''
+    }
+  };
+
+  onInputChange = term => {
+    this.setState({ term: term });
+    this.props.onSearch(term);
+  }
+
+  handleInputChange = event => {
+    this.onInputChange(event.target.value)
+  }
+
+  render(){
+    return(
+      <div>
+        <input onChange={this.handleInputChange} />
+      </div>
+    );
+  }
 };
 
 export default SearchBar;

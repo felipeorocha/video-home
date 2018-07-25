@@ -13,42 +13,34 @@ class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null,
-      term: ''
+      selectedVideo: null
     };
-    YTSearch({ key: API_KEY, term: this.state.term }, (videos) => { // videos = data
-      this.setState({
-        videos: videos, // ES6: could be just 'videos'
-        selectedVideo: videos[0]
-      })
-    });
-  }
-
-  handleClick = event => {
-    event.preventDefault();
-    YTSearch({ key: API_KEY, term: this.state.term }, (videos) => { // videos = data
-      this.setState({
-        videos: videos, // ES6: could be just 'videos'
-        selectedVideo: videos[0]
-      })
-    });
-  }
-
-  onInputChange = event => {
-    this.setState({ term: event.target.value });
+    
+    this.videosSearch('');
   }
 
   onVideoSelect = selectedVideo => {
     this.setState({ selectedVideo: selectedVideo })
   }
 
+  videosSearch = term => {
+    YTSearch({ key: API_KEY, term: term }, (videos) => { // videos = data
+      this.setState({
+        videos: videos, // ES6: could be just 'videos'
+        selectedVideo: videos[0]
+      })
+    });
+  }
+
+  handleSearch = term => {
+    this.videosSearch(term)
+  }
+
   render() {
     return (
       <div>
         <SearchBar
-          value={this.state.term}
-          onInputChange={this.onInputChange}
-          onClick={this.handleClick}
+          onSearch={this.handleSearch}
         />
         <div style={{ display: 'flex' }}>
           <VideoDetail video={this.state.selectedVideo} />
