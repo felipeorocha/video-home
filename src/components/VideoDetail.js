@@ -10,11 +10,11 @@ const VideoDetail = ({ video }) => { // const { video } = props;
 
   return (
     <div style={{ maxWidth: '60%' }}>
-      <div style={{ height: '70%', padding: '20px 0' }}>
-        <iframe style={{ width: '100%', height: '100%' }} src={url}></iframe>
+      <div style={{ height: '75%', padding: '20px 0' }}>
+        <iframe style={{ width: '100%', height: '100%', boxSizing: 'border-box' }} src={url}></iframe>
       </div>
       <div>
-        <div>{video.snippet.title}</div>
+        <div style={{ fontSize: 'x-large',  marginBottom: '15px' }}>{video.snippet.title}</div>
         <div>{video.snippet.description}</div>
       </div>
     </div>
