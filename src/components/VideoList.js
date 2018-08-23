@@ -11,7 +11,7 @@ const VideoList = (props) => {
   });
 
   return (
-    <ul style={{ maxWidth: '40%', listStyleType: 'none', backgroundColor: '#929292' }}>
+    <ul style={{ maxWidth: '40%', listStyleType: 'none', backgroundColor: '#929292', padding: '0 40px' }}>
       {videoItems}
     </ul>
   );

@@ -42,7 +42,7 @@ class App extends Component {
         <SearchBar
           onSearch={this.handleSearch}
         />
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList
             onVideoSelect={this.onVideoSelect}
