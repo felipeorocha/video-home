@@ -5,6 +5,8 @@ import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/SearchBar';
 
+import styles from './styles/App.css';
+
 const API_KEY = 'AIzaSyAYlkHKoUwEybCYKK_bhrbXWnulOzw4cNY';
 
 class App extends Component {
@@ -38,11 +40,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <SearchBar
           onSearch={this.handleSearch}
         />
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className={styles.videoContainer}>
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList
             onVideoSelect={this.onVideoSelect}
