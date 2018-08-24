@@ -14,7 +14,7 @@ class App extends Component {
     videos: [],
     selectedVideo: null
   };
-  
+
   componentDidMount(){
     this.videoSearch('');
   }

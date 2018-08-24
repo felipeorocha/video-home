@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Bookmarks from './Bookmarks';
+
 import styles from '../styles/SearchBar.css';
 
 class SearchBar extends Component {
@@ -16,6 +18,11 @@ class SearchBar extends Component {
     this.onInputChange(searchedTerm)
   }
 
+  bookmarkPage = () => {
+    return <Bookmarks />
+  }
+
+
   // To avoid handleInputSearch, could be used the sintax: onChange={event => this.onInputChange(event.target.value)}
 
   render(){
@@ -26,7 +33,7 @@ class SearchBar extends Component {
             <input className={styles.input} onChange={this.handleInputChange} />
             <button className={styles.button}>Search</button>
           </div>
-          <button className={styles.bookmarkButton}>Bookmarks</button>
+          <button onClick={this.bookmarkPage} className={styles.bookmarkButton}>Bookmarks</button>
         </header>
       </div>
     );
