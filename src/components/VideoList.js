@@ -1,6 +1,8 @@
 import React from 'react';
 import VideoListItem from './VideoListItem';
 
+import styles from '../styles/VideoList.css';
+
 const VideoList = (props) => {
   const videoItems = props.videos.map(video => {
     return <VideoListItem
@@ -11,7 +13,7 @@ const VideoList = (props) => {
   });
 
   return (
-    <ul style={{ maxWidth: '40%', listStyleType: 'none', backgroundColor: '#929292', padding: '0 40px' }}>
+    <ul className={styles.listItem}>
       {videoItems}
     </ul>
   );

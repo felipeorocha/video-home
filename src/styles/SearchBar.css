@@ -1,0 +1,29 @@
+.seacrhBarContainer {
+  height: 60px;
+  background: brown;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.input {
+  border-radius: 3px 0 0 3px;
+  border: 1px solid black;
+  padding: 5px;
+  border-right: none;
+}
+
+.button {
+  border-radius: 0 3px 3px 0;
+  border: solid 1px black;
+  padding: 5px;
+}

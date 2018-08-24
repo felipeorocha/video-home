@@ -1,0 +1,33 @@
+.listItemContainer {
+  margin: 15px 0;
+}
+
+.listItemWrapper {
+  display: flex;
+}
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.listDetailCard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.listDetailCard {
+  margin-left: 15px;
+}
+
+.bookmark {
+  padding-left: 20px;
+  margin-left: 40px;
+  z-index: 999;
+  background-color: #6b6b6b;
+  height: fit-content;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  align-self: center;
+}
