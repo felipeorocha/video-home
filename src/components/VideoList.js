@@ -6,29 +6,30 @@ import styles from '../styles/VideoList.css';
 class VideoList extends Component {
 
   state = {
-    videozinho: '',
-    videosSelecteds: []
+    videoName: '',
+    selectedVideos: []
   };
 
   getVideoDetails = vid => {
-    this.setState({ videozinho: vid });
+    this.setState({ videoName: vid });
     console.log(vid);
     
-    this.setState({ videosSelecteds: [...this.state.videosSelecteds, this.state.videozinho] })
+    this.setState({ selectedVideos: [...this.state.selectedVideos, this.state.videozinho] })
 
-    console.log(this.state.videosSelecteds)
+    console.log(this.state.selectedVideos)
   };
-
-
-
-
-
 
   render() {
 
-    const videoItems = props.videos.map(video => {
+    const {
+      videos,
+      onVideoSelect,
+    } = this.props;
+
+    const videoItems = videos.map(video => {
       return <VideoListItem
-        onVideoSelected={props.onVideoSelect}
+        onVideoSelected={onVideoSelect}
+        getVideoDetails={this.getVideoDetails}
         key={video.etag}
         video={video}
       />
