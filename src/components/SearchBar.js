@@ -22,8 +22,11 @@ class SearchBar extends Component {
     return(
       <div className={styles.seacrhBarContainer}>
         <header className={styles.header}>
-          <input className={styles.input} onChange={this.handleInputChange} />
-          <button className={styles.button}>Search</button>
+          <div className={styles.headerContent}>
+            <input className={styles.input} onChange={this.handleInputChange} />
+            <button className={styles.button}>Search</button>
+          </div>
+          <button className={styles.bookmarkButton}>Bookmarks</button>
         </header>
       </div>
     );

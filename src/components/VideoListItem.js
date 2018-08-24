@@ -11,8 +11,9 @@ class VideoListItem extends Component {
   getVideoDetails = vid => {
     this.setState({ videozinho: vid });
     console.log(">>>>>>> vid", vid);
-    // this.setState({ videosSelecteds: this.state.videosSelecteds.push(vid) })
+
     this.setState({ videosSelecteds: [...this.state.videosSelecteds, this.state.videozinho] })
+
     console.log(">>>>>>> this.state.videosSelecteds", this.state.videosSelecteds)
   };
 
