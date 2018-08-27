@@ -6,17 +6,13 @@ import styles from '../styles/VideoList.css';
 class VideoList extends Component {
 
   state = {
-    videoName: '',
     selectedVideos: []
   };
 
   getVideoDetails = vid => {
-    this.setState({ videoName: vid });
-    console.log(vid);
-    
-    this.setState({ selectedVideos: [...this.state.selectedVideos, this.state.videozinho] })
-
-    console.log(this.state.selectedVideos)
+    this.setState({
+      selectedVideos: [...this.state.selectedVideos, vid]
+    }, () => console.log(this.state.selectedVideos))
   };
 
   render() {
@@ -29,7 +25,7 @@ class VideoList extends Component {
     const videoItems = videos.map(video => {
       return <VideoListItem
         onVideoSelected={onVideoSelect}
-        getVideoDetails={this.getVideoDetails}
+        getVideoDetailed={this.getVideoDetails}
         key={video.etag}
         video={video}
       />
