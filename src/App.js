@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   videoSearch = searchWord => {
-    YTSearch({ key: API_KEY, term: searchWord }, (videos) => { // videos = data
+    YTSearch({ key: API_KEY, term: searchWord, maxResults: '10' }, (videos) => { // videos = data
       this.setState({
         videos: videos, // ES6: could be just 'videos'
         selectedVideo: videos[0]
