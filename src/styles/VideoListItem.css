@@ -23,7 +23,6 @@
 .bookmark {
   padding-left: 20px;
   margin-left: 40px;
-  z-index: 999;
   background-color: #6b6b6b;
   height: fit-content;
   border-radius: 3px;
