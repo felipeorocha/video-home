@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import YouTube from './components/YouTube';
+// import YouTube from './components/YouTube';
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -5,7 +5,7 @@ import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/SearchBar';
 
-import Bookmarks from './components/Bookmarks';
+// import Bookmarks from './components/Bookmarks';
 
 import styles from './styles/App.css';
 
@@ -26,9 +26,9 @@ class App extends Component {
   }
 
   videoSearch = searchWord => {
-    YTSearch({ key: API_KEY, term: searchWord, maxResults: '10' }, (videos) => { // videos = data
+    YTSearch({ key: API_KEY, term: searchWord, maxResults: '10' }, (videos) => {
       this.setState({
-        videos: videos, // ES6: could be just 'videos'
+        videos: videos,
         selectedVideo: videos[0]
       })
     });
@@ -37,8 +37,6 @@ class App extends Component {
   handleSearch = term => {
     this.videoSearch(term)
   }
-
-  // To avoid handleSearch video, could be used the sintax: onSearch={term => this.videoSearch(term)}
 
   render() {
     return (
