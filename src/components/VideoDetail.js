@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../styles/VideoDetails.css';
 
-const VideoDetail = ({ video }) => { // const { video } = props;
+const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>Loading videos...</div>;
   }
