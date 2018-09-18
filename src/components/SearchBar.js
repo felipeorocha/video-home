@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import styles from '../styles/SearchBar.css';
 
@@ -25,7 +26,7 @@ class SearchBar extends Component {
              <input type="text" className={styles.input} onChange={this.handleInputChange}/>
              <button className={styles.button} type="button">Search</button>
            </div>
-           <button onClick={this.bookmarkPage} className={styles.bookmarkButton}>Bookmarks</button>
+           <Link to="/bookmarks"><button className={styles.bookmarkButton}>Bookmarks</button></Link>
          </header>
       </div>
     )
@@ -33,27 +34,3 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
-
-
-// *** Using refs ***
-//
-// class SearchBar extends React.Component {
-//   render() {
-//     return (
-//       <div className={styles.seacrhBarContainer}>
-//         <input type="text" className="form-control" ref="search"/>
-//         <span className="input-group-btn">
-//           <button
-//              className="btn btn-default"
-//              type="button"
-//              onClick={(event) => this.props.onSearchTerm(this.refs.search.value)}
-//            >
-//              Go!
-//            </button>
-//          </span>
-//       </div>
-//     )
-//   }
-// }
-//
-// export default SearchBar;

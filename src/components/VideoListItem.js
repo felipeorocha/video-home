@@ -7,7 +7,7 @@ import styles from '../styles/VideoListItem.css';
 
 class VideoListItem extends Component {
   bookmarkeds() {
-    this.props.bookmarkVideo(this.props.video.id.videoId);
+    this.props.bookmarkVideo(this.props.video);
   }
 
   render() {
@@ -34,34 +34,8 @@ class VideoListItem extends Component {
     }
   }
 
-function mapStateToProps(state) {
-  return { bookmarks: state.bookmarks };
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ bookmarkVideo }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoListItem);
-
-// import React from 'react'
-
-// const VideoListItem = ({ video, onVideoSelect }) => {
-//   const snippet = video.snippet;
-//   const imageUrl = snippet.thumbnails.default.url;
-
-//   return (
-//     <li className="media" onClick={() => onVideoSelect(video)}>
-//       <div className="media-left">
-//         <a href="#">
-//           <img className="media-object" src={imageUrl} alt="{title}" />
-//         </a>
-//       </div>
-//       <div className="media-body">
-//         <h5 className="media-heading">{snippet.title}</h5>
-//       </div>
-//     </li>
-//   )
-// }
-
-// export default VideoListItem
+export default connect(null, mapDispatchToProps)(VideoListItem);
