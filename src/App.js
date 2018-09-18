@@ -53,7 +53,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchTube}, dispatch)
+  return bindActionCreators({ fetchTube }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

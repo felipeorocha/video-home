@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { bookmarkVideo } from '../actions/index';
 
 import styles from '../styles/VideoListItem.css';
 
 class VideoListItem extends Component {
+  bookmarkeds() {
+    this.props.bookmarkVideo(this.props.video.id.videoId);
+  }
+
   render() {
     const {
       video,
       onVideoSelected,
-      getVideoDetailed,
     } = this.props;
 
     const imageUrl = video.snippet.thumbnails.default.url;
@@ -20,15 +26,24 @@ class VideoListItem extends Component {
           </div>
           <div className={styles.listDetailCard}>
             <div className={styles.listDetailTitle}>{video.snippet.title}</div>
-            <div onClick={() => getVideoDetailed(video.snippet.title)} className={styles.bookmark}>Favoritar</div>
+            <div onClick={this.bookmarkeds.bind(this)} className={styles.bookmark}>Favoritar</div>
           </div>
         </div>
       </li>
-    );
+      );
+    }
   }
+
+function mapStateToProps(state) {
+  return { bookmarks: state.bookmarks };
 }
 
-export default VideoListItem;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ bookmarkVideo }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VideoListItem);
+
 // import React from 'react'
 
 // const VideoListItem = ({ video, onVideoSelect }) => {

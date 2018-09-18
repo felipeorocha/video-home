@@ -19,3 +19,10 @@ export function fetchTube(term) {
     payload: request
   };
 }
+
+export function bookmarkVideo(id) {
+  return {
+    type: "bookmarks",
+    payload: id
+  };
+}
