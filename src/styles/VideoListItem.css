@@ -25,7 +25,7 @@
   margin-left: 40px;
   background-color: #6b6b6b;
   height: fit-content;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
   padding: 10px;
   cursor: pointer;
   align-self: center;

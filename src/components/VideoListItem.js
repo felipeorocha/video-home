@@ -6,8 +6,14 @@ import { bookmarkVideo } from '../actions/index';
 import styles from '../styles/VideoListItem.css';
 
 class VideoListItem extends Component {
+  state = {
+    isClicked: false
+  }
+
   bookmarkeds() {
     this.props.bookmarkVideo(this.props.video);
+    this.setState({ isClicked: true })
+    this.disabled = true;
   }
 
   render() {
@@ -26,7 +32,11 @@ class VideoListItem extends Component {
           </div>
           <div className={styles.listDetailCard}>
             <div className={styles.listDetailTitle}>{video.snippet.title}</div>
-            <div onClick={this.bookmarkeds.bind(this)} className={styles.bookmark}>Favoritar</div>
+
+            <div className="isClicked" style={{ display: "flex", flexDirection: "column" }}>
+              <div onClick={this.bookmarkeds.bind(this)} className={styles.bookmark}>Bookmark</div>
+              { this.state.isClicked ? <span style={{ backgroundColor: "red", height: "3px", width: "70%", marginLeft: "40px", borderRadius: "0 0 3px 3px" }}></span> : '' }
+            </div>
           </div>
         </div>
       </li>

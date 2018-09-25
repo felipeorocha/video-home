@@ -22,14 +22,18 @@ class SearchBar extends Component {
     return (
       <div className={styles.seacrhBarContainer}>
         <header className={styles.header}>
-           <div className={styles.headerContent}>
-             <input type="text" className={styles.input} onChange={this.handleInputChange}/>
-             <button className={styles.button} type="button">Search</button>
-           </div>
-           <Link to="/bookmarks"><button className={styles.bookmarkButton}>Bookmarks</button></Link>
-         </header>
+          <div className={styles.headerContent}>
+            <input type="text" className={styles.input} onChange={this.handleInputChange}/>
+            <button className={styles.button} type="button">Search</button>
+          </div>
+          <Link to="/bookmarks">
+            <button className={styles.bookmarkButton}>
+              Bookmarks
+            </button>
+          </Link>
+        </header>
       </div>
-    )
+    );
   }
 }
 

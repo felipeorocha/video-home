@@ -11,9 +11,9 @@ class Bookmarks extends Component {
           this.props.bookmarks.map(item =>
           {
             return <div
-                      style={{ width: '200px', height: '150px', border: '1px solid black',
+                      style={{ width: '300px', height: '250px', border: '1px solid black',
                         margin: '5px', display: 'flex', justifyContent: 'center',
-                        alignItems: 'center' }}>
+                        alignItems: 'center', flexDirection: 'column' }}>
                       <img
                         src={item.snippet.thumbnails.default.url}
                         alt={item.snippet.title} />
