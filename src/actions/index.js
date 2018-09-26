@@ -9,20 +9,20 @@ export function fetchTube(term) {
     key: API_KEY,
     q: term,
     maxResults: 20,
-    type: 'video'
+    type: 'video',
   };
 
-  const request = axios.get(YOUTUBE_URL, { params: params });
+  const request = axios.get(YOUTUBE_URL, { params });
 
   return {
-    type: "fetch",
-    payload: request
+    type: 'fetch',
+    payload: request,
   };
 }
 
 export function bookmarkVideo(id) {
   return {
-    type: "bookmarks",
-    payload: id
+    type: 'bookmarks',
+    payload: id,
   };
 }

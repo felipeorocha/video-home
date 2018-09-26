@@ -2,25 +2,25 @@ import { combineReducers } from 'redux';
 
 function videos(state = [], action) {
 
-  switch(action.type) {
-    case "fetch":
+  switch (action.type) {
+    case 'fetch':
       return action.payload.data.items;
     default:
-      return state
+      return state;
   }
 }
 
 function bookmarks(state = [], action) {
-  switch(action.type) {
-    case "bookmarks":
+  switch (action.type) {
+    case 'bookmarks':
       return [
         ...state,
-        action.payload
-      ]
+        action.payload,
+      ];
     default:
-      return state
+      return state;
   }
 }
 
-const reducers = combineReducers({ videos: videos, bookmarks: bookmarks })
+const reducers = combineReducers({ videos, bookmarks });
 export default reducers;
