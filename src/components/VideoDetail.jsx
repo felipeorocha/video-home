@@ -24,10 +24,6 @@ const VideoDetail = ({ video }) => {
   );
 };
 
-VideoDetail.defaultProps = {
-
-};
-
 VideoDetail.propTypes = {
   video: PropTypes.shape({
     id: PropTypes.number,
