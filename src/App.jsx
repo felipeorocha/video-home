@@ -3,7 +3,7 @@ import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchTube } from './actions/index';
+import { fetchTube } from './actions';
 
 import SearchBar from './components/SearchBar';
 

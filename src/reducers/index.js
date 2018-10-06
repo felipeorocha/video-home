@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 
 function videos(state = [], action) {
-
   switch (action.type) {
     case 'fetch':
       return action.payload.data.items;
