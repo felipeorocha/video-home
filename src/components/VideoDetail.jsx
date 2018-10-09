@@ -26,7 +26,9 @@ const VideoDetail = ({ video }) => {
 
 VideoDetail.propTypes = {
   video: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.shape({
+      videoId: PropTypes.string,
+    }),
   }),
 };
 

@@ -22,7 +22,9 @@ const VideoList = ({ videos, onVideoSelect }) => {
 
 VideoList.propTypes = {
   videos: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.shape({
+      videoId: PropTypes.string,
+    }),
   }),
   onVideoSelect: PropTypes.func,
 };

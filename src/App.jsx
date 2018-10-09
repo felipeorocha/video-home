@@ -62,14 +62,22 @@ class App extends Component {
 }
 
 App.propTypes = {
-  selectedVideo: PropTypes.string,
-  videos: PropTypes.arrayOf,
+  selectedVideo: PropTypes.shape({
+    id: PropTypes.shape({
+      videoId: PropTypes.string,
+    }),
+  }),
+  videos: PropTypes.shape({
+    id: PropTypes.shape({
+      videoId: PropTypes.string,
+    }),
+  }),
   fetchTube: PropTypes.func,
 };
 
 App.defaultProps = {
-  selectedVideo: '',
-  videos: [],
+  selectedVideo: {},
+  videos: {},
   fetchTube: () => {},
 };
 

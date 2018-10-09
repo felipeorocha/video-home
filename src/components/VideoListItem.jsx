@@ -77,7 +77,9 @@ class VideoListItem extends Component {
 
 VideoListItem.propTypes = {
   video: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.shape({
+      videoId: PropTypes.string,
+    }),
   }),
   onVideoSelected: PropTypes.func,
   bookmarkVideo: PropTypes.func,

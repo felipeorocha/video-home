@@ -2,5 +2,6 @@ src/index.js
 # src/App.jsx
 # src/components/VideoList.jsx
 # src/components/VideoListItem.jsx
+# src/components/VideoDetail.jsx
 # src/components/Bookmarks.jsx
 # src/components/SearchBar.jsx
