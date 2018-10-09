@@ -67,11 +67,11 @@ App.propTypes = {
       videoId: PropTypes.string,
     }),
   }),
-  videos: PropTypes.shape({
+  videos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.shape({
       videoId: PropTypes.string,
     }),
-  }),
+  })),
   fetchTube: PropTypes.func,
 };
 
