@@ -17,7 +17,7 @@ class Bookmarks extends Component {
                       <img
                         src={item.snippet.thumbnails.default.url}
                         alt={item.snippet.title} />
-                      <span>{item.snippet.title}</span>
+                      <span style={{ textAlign: "center" }}>{item.snippet.title}</span>
                       </div>
           })
         }

@@ -31,6 +31,7 @@ class SearchBar extends Component {
               Bookmarks
             </button>
           </Link>
+          <span style={{ color: "white" }}>{localStorage.getItem('UserNameLogin')}</span>
         </header>
       </div>
     );
