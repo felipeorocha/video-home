@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import styles from '../styles/Login.css'
 
-class Login extends Component {
+class SignUp extends Component {
 
   state = {
     username: '',
@@ -18,7 +18,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    fetch('http://localhost:8080/api/login', { // should be in an action
+    fetch('http://localhost:8080/api/usuarios', { // should be in an action
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -27,11 +27,7 @@ class Login extends Component {
     })
     .then(response => response.json())
     .then(responseJson => {
-      if(responseJson.success !== false) {
-        localStorage.setItem('UserTokenHash', responseJson.token);
-        localStorage.setItem('UserNameLogin', responseJson.user.username);
-        this.props.history.push('/dashboard');
-      }
+        this.props.history.push('/login');
     }).catch((err) => console.log('Erro do catch: ', err));
 
   }
@@ -58,15 +54,10 @@ class Login extends Component {
             <input type="password" onChange={this.handlePasswordChange} placeholder="Password..." />
             <input type="submit" value="Login" />
           </div>
-          <Link to="/signup">
-            <button>
-              Sign Up
-            </button>
-          </Link>
         </form>
       </div>
     );
   }
 }
 
-export default withRouter(Login);
+export default withRouter(SignUp);

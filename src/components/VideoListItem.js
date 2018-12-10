@@ -14,6 +14,24 @@ class VideoListItem extends Component {
     this.props.bookmarkVideo(this.props.video);
     this.setState({ isClicked: true })
     this.disabled = true;
+
+  
+      const data = {
+        videos: this.props.video.snippet.thumbnails.default.url,
+        title: this.props.video.snippet.title
+      };
+  
+      fetch('http://localhost:8080/api/videos', { // should be in an action
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(response => response.json())
+      .then(responseJson => {
+      }).catch((err) => console.log('Erro do catch: ', err));
+  
   }
 
   render() {
