@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import Logout from './Logout';
 
 import styles from '../styles/SearchBar.css';
 
@@ -32,6 +33,7 @@ class SearchBar extends Component {
             </button>
           </Link>
           <span style={{ color: "white" }}>{localStorage.getItem('UserNameLogin')}</span>
+          <Logout />
         </header>
       </div>
     );

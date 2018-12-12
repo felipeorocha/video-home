@@ -15,7 +15,8 @@ class VideoListItem extends Component {
     this.setState({ isClicked: true })
     this.disabled = true;
 
-  
+    const Authorization = localStorage.getItem('UserTokenHash');
+
       const data = {
         videos: this.props.video.snippet.thumbnails.default.url,
         title: this.props.video.snippet.title
@@ -25,7 +26,8 @@ class VideoListItem extends Component {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          Authorization
         }
       })
       .then(response => response.json())
