@@ -15,16 +15,16 @@ class SearchBar extends Component {
     this.props.onSearchTerm(event.target.value);
   }
 
-  handleInputChange = searchedTerm => {
-    this.onInputChange(searchedTerm)
-  }
+  // handleInputChange = searchedTerm => {
+  //   this.onInputChange(searchedTerm)
+  // }
 
   render() {
     return (
       <div className={styles.seacrhBarContainer}>
         <header className={styles.header}>
           <div className={styles.headerContent}>
-            <input type="text" className={styles.input} onChange={this.handleInputChange}/>
+            <input type="text" className={styles.input} onChange={this.onInputChange}/>
             <button className={styles.button} type="button">Search</button>
           </div>
           <Link to="/bookmarks">
