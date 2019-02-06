@@ -11,7 +11,7 @@ export function fetchTube(term) {
     type: 'video'
   };
 
-  const request = axios.get(YOUTUBE_URL, { params: params });
+  const request = axios.get(YOUTUBE_URL, { params }); // { params: params }
 
   return {
     type: "fetch",

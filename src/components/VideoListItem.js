@@ -22,7 +22,7 @@ class VideoListItem extends Component {
         title: this.props.video.snippet.title
       };
   
-      fetch('http://localhost:8080/api/videos', { // should be in an action
+      fetch('http://localhost:8080/api/videos', { // this fetch data should be in an action
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
