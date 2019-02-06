@@ -31,7 +31,7 @@ class VideoListItem extends Component {
         }
       })
       .then(response => response.json())
-      .then(responseJson => {
+      .then(() => {
       }).catch((err) => console.log('Erro do catch: ', err));
   
   }
