@@ -18,7 +18,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    fetch('http://localhost:8080/api/login', { // should be in an action
+    fetch('http://localhost:8080/api/login', { // should be in an action [REFACTOR]
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

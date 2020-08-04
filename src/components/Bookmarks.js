@@ -18,7 +18,7 @@ class Bookmarks extends Component {
   async fetchUserVideos(){
     const Authorization = localStorage.getItem('UserTokenHash');
 
-    const res = await fetch('http://localhost:8080/api/videos', { // should be in an action
+    const res = await fetch('http://localhost:8080/api/videos', { // should be in an action [REFACTOR]
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
